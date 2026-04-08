@@ -25,7 +25,6 @@ export const techStackData = [
       { name: "Express", icon: "expressjs" },
       { name: "MongoDB", icon: "mongodb" },
       { name: "MySQL", icon: "mysql" },
-      { name: "PostgreSQL", icon: "postgresql" },
     ],
   },
   {
