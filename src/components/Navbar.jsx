@@ -7,10 +7,11 @@ import { GithubIcon } from "@/components/SocialIcons";
 import { personalInfo } from "@/data/siteData";
 
 const navLinks = [
+  { label: "TechStack", href: "#tech-stack" },
   { label: "Services", href: "#services" },
   { label: "Projects", href: "#projects" },
-  { label: "Testimonials", href: "#why-me" },
   { label: "Contact", href: "#contact" },
+  { label: "Resume", href: "#profile" },
 ];
 
 export default function Navbar() {
@@ -35,7 +36,7 @@ export default function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-3rem)] max-w-[820px] transition-all duration-500 ${
+      className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-3rem)] max-w-[860px] transition-all duration-500 ${
         scrolled ? "top-4" : "top-6"
       }`}
     >
@@ -60,34 +61,23 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="px-4 py-1.5 text-[14px] text-text-muted hover:text-white transition-colors rounded-full hover:bg-white/5"
+              className="px-3.5 py-1.5 text-[13px] text-text-muted hover:text-white transition-colors rounded-full hover:bg-white/5"
             >
               {link.label}
             </a>
           ))}
         </div>
 
-        {/* Right — GitHub + Book a Call */}
-        <div className="flex items-center gap-2">
-          <a
-            href={personalInfo.social.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center w-10 h-10 text-text-muted hover:text-white rounded-full bg-white/[0.04] hover:bg-white/[0.08] transition-all border border-border-subtle"
-            aria-label="GitHub"
-          >
-            <GithubIcon size={16} />
-          </a>
-          <a
-            href={personalInfo.bookCallLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-2.5 text-[14px] font-medium bg-white/[0.07] hover:bg-white/12 text-white rounded-full transition-all hover:scale-[1.03] border border-border-subtle"
-          >
-            <Sparkles size={14} />
-            Book a Call
-          </a>
-        </div>
+        {/* Right — Book a Call */}
+        <a
+          href={personalInfo.bookCallLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 px-5 py-2.5 text-[14px] font-medium bg-white/[0.07] hover:bg-white/12 text-white rounded-full transition-all hover:scale-[1.03] border border-border-subtle"
+        >
+          <Sparkles size={14} />
+          Book a Call
+        </a>
       </div>
 
       {/* Mobile */}

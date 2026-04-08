@@ -35,7 +35,7 @@ export default function WhyMe() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ type: "spring", stiffness: 100, damping: 20 }}
           className="text-center mb-14"
         >
           <Badge icon={<CircleDot size={14} />}>Why choose me</Badge>
@@ -59,8 +59,8 @@ export default function WhyMe() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="rounded-[24px] border border-border-subtle bg-surface-card overflow-hidden"
+              transition={{ type: "spring", stiffness: 100, damping: 20, delay: i * 0.1 }}
+              className="rounded-[24px] border border-border-subtle bg-surface-card/80 backdrop-blur-md overflow-hidden"
             >
               <div className="grid grid-cols-1 md:grid-cols-2">
                 {/* Good side */}

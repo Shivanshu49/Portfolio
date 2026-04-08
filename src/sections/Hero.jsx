@@ -28,7 +28,7 @@ export default function Hero() {
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
               className="mt-6"
             >
               <span className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold text-white leading-[1] tracking-[-0.03em]">
@@ -50,7 +50,7 @@ export default function Hero() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
               className="mt-6 text-[15px] md:text-base text-text-muted max-w-md leading-relaxed"
             >
               {personalInfo.tagline}
@@ -58,23 +58,13 @@ export default function Hero() {
               {personalInfo.subtitle}
             </motion.p>
 
-            {/* CTA buttons */}
+            {/* CTA buttons — Contact Now first (primary), View Projects second */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.3 }}
               className="mt-8 flex flex-wrap gap-3"
             >
-              <a
-                href="#projects"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="px-7 py-3.5 rounded-full bg-white/[0.07] border border-border-subtle text-white text-[14px] font-medium hover:bg-white/12 transition-all hover:scale-[1.03]"
-              >
-                See All Projects
-              </a>
               <a
                 href="#contact"
                 onClick={(e) => {
@@ -85,13 +75,23 @@ export default function Hero() {
               >
                 Contact Now
               </a>
+              <a
+                href="#projects"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="px-7 py-3.5 rounded-full bg-white/[0.07] border border-border-subtle text-white text-[14px] font-medium hover:bg-white/12 transition-all hover:scale-[1.03]"
+              >
+                View Projects
+              </a>
             </motion.div>
 
             {/* Stats */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.4 }}
               className="mt-10 flex gap-10"
             >
               {personalInfo.stats.map((stat) => (
@@ -109,7 +109,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
             className="relative hidden lg:block"
           >
             <div className="relative w-full max-w-sm ml-auto aspect-[3/4] rounded-[40px] overflow-hidden border border-border-subtle">

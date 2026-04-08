@@ -18,8 +18,8 @@ export default function Contact() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="relative z-10 max-w-7xl mx-auto rounded-[40px] border border-border-subtle bg-surface-card card-glow overflow-hidden"
+          transition={{ type: "spring", stiffness: 100, damping: 20 }}
+          className="relative z-10 max-w-7xl mx-auto rounded-[40px] border border-border-subtle bg-surface-card/70 backdrop-blur-md card-glow overflow-hidden"
         >
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 p-8 md:p-12">
             {/* Left — Content */}

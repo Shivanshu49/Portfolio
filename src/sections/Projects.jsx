@@ -12,7 +12,7 @@ export default function Projects() {
     <section id="projects" className="relative px-6 py-24">
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Outer container card matching Framer */}
-        <div className="rounded-[32px] border border-border-subtle bg-surface-card/50 p-8 md:p-12">
+        <div className="rounded-[32px] border border-border-subtle bg-surface-card/70 backdrop-blur-md p-8 md:p-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {/* Left — Heading, stats, CTAs */}
             <div>
@@ -22,7 +22,7 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+                transition={{ type: "spring", stiffness: 100, damping: 20 }}
                 className="mt-6 text-3xl sm:text-4xl md:text-[44px] font-bold text-white leading-tight tracking-tight"
               >
                 Projects & Achievements
@@ -53,9 +53,9 @@ export default function Projects() {
               {/* CTA buttons */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
                 className="flex flex-wrap gap-3 mt-8"
               >
                 <a
@@ -88,8 +88,8 @@ export default function Projects() {
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="group p-6 rounded-[20px] border border-border-subtle bg-surface-card hover:border-border-hover transition-all duration-300"
+                  transition={{ type: "spring", stiffness: 100, damping: 20, delay: i * 0.1 }}
+                  className="group p-6 rounded-[20px] border border-border-subtle bg-surface-card/80 backdrop-blur-md hover:border-border-hover transition-all duration-300"
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-2 rounded-xl bg-white/[0.04] border border-border-subtle">
@@ -127,9 +127,9 @@ export default function Projects() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
+                transition={{ type: "spring", stiffness: 100, damping: 20, delay: i * 0.08 }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="group relative p-6 rounded-[24px] border border-border-subtle bg-surface-card card-glow hover:border-border-hover transition-all duration-300"
+                className="group relative p-6 rounded-[24px] border border-border-subtle bg-surface-card/80 backdrop-blur-md card-glow hover:border-border-hover transition-all duration-300"
               >
                 <div className="relative z-10">
                   {/* Title */}

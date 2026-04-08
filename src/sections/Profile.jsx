@@ -11,26 +11,26 @@ export default function Profile() {
   return (
     <section id="profile" className="relative px-6 py-24 section-glow">
       <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Large heading */}
+        {/* Large heading — matching Framer serif italic style */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ type: "spring", stiffness: 100, damping: 20 }}
           className="text-center mb-16"
         >
           <Badge icon={<span className="w-2 h-2 rounded-full bg-accent-blue inline-block" />}>
-            Full-Stack Developer & AI Explorer
+            Backend developer
           </Badge>
-          <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-bold">
-            <span className="text-white">Shivanshu ·</span>{" "}
-            <span className="text-text-secondary font-normal">
-              Developer & Builder
+          <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+            <span className="text-white">Shivanshu,</span>{" "}
+            <span className="font-serif italic text-text-secondary font-normal">
+              Backend Developer
             </span>
           </h2>
           <p className="mt-4 text-text-muted max-w-2xl mx-auto">
-            Specializing in building scalable APIs, intelligent applications,
-            and performant full-stack systems.
+            Passionate developer focused on building scalable web applications
+            and exploring AI-driven solutions.
           </p>
         </motion.div>
 
@@ -41,8 +41,8 @@ export default function Profile() {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="rounded-[32px] border border-border-subtle bg-surface-card p-8 flex flex-col"
+            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
+            className="rounded-[32px] border border-border-subtle bg-surface-card/80 backdrop-blur-md p-8 flex flex-col"
           >
             {/* Image */}
             <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-surface to-surface-elevated mb-6 border border-border-subtle">
@@ -68,46 +68,11 @@ export default function Profile() {
               <span className="font-bold">{personalInfo.name}</span>
             </h3>
             <p className="text-sm text-text-muted mt-1">
-              Full-Stack MERN Developer | Backend Craftsman | AI/ML Explorer
+              Backend Developer & AI Enthusiast
             </p>
-
-            {/* Location & Email */}
-            <div className="flex flex-wrap items-center gap-3 mt-3">
-              <span className="text-xs text-text-muted flex items-center gap-1.5">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-                {personalInfo.location}
-              </span>
-              <span className="text-xs text-text-muted flex items-center gap-1.5">
-                <EmailIcon size={14} />
-                {personalInfo.email}
-              </span>
-            </div>
 
             {/* Social icons */}
             <div className="flex items-center gap-3 mt-5 pt-5 border-t border-border-subtle">
-              <a
-                href={personalInfo.social.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-xl border border-border-subtle hover:border-border-hover hover:bg-surface-hover text-text-muted hover:text-white transition-all"
-                aria-label="GitHub"
-              >
-                <GithubIcon size={18} />
-              </a>
-              <span className="w-px h-5 bg-border-subtle" />
-              <a
-                href={personalInfo.social.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-xl border border-border-subtle hover:border-border-hover hover:bg-surface-hover text-text-muted hover:text-white transition-all"
-                aria-label="LinkedIn"
-              >
-                <LinkedinIcon size={18} />
-              </a>
-              <span className="w-px h-5 bg-border-subtle" />
               <a
                 href={personalInfo.social.twitter}
                 target="_blank"
@@ -126,6 +91,26 @@ export default function Profile() {
                 aria-label="Instagram"
               >
                 <InstagramIcon size={18} />
+              </a>
+              <span className="w-px h-5 bg-border-subtle" />
+              <a
+                href={personalInfo.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-xl border border-border-subtle hover:border-border-hover hover:bg-surface-hover text-text-muted hover:text-white transition-all"
+                aria-label="LinkedIn"
+              >
+                <LinkedinIcon size={18} />
+              </a>
+              <span className="w-px h-5 bg-border-subtle" />
+              <a
+                href={personalInfo.social.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-xl border border-border-subtle hover:border-border-hover hover:bg-surface-hover text-text-muted hover:text-white transition-all"
+                aria-label="GitHub"
+              >
+                <GithubIcon size={18} />
               </a>
               <span className="w-px h-5 bg-border-subtle" />
               <a
@@ -150,7 +135,7 @@ export default function Profile() {
               whileTap={{ scale: 0.98 }}
               className="mt-6 inline-flex items-center justify-center px-6 py-3 rounded-xl bg-white/10 border border-border-subtle text-white text-sm font-medium hover:bg-white/15 transition-all"
             >
-              Connect with me
+              Contact Now
             </motion.a>
           </motion.div>
 
@@ -159,20 +144,14 @@ export default function Profile() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
             className="flex flex-col gap-6"
           >
             {/* Bio */}
-            <div className="rounded-[32px] border border-border-subtle bg-surface-card p-8">
+            <div className="rounded-[32px] border border-border-subtle bg-surface-card/80 backdrop-blur-md p-8">
               <p className="text-text-secondary leading-relaxed text-[15px]">
                 {personalInfo.bio}
               </p>
-
-              {/* Current focus */}
-              <div className="mt-4 p-4 rounded-xl bg-white/[0.03] border border-border-subtle">
-                <p className="text-xs text-text-muted uppercase tracking-wider mb-2 font-semibold">Currently working on</p>
-                <p className="text-sm text-text-secondary">MERN + AI integrated projects • Learning DevOps (Docker, CI/CD, Cloud) • Building scalable APIs, automation tools & interactive UIs • Exploring Machine Learning & LLM apps</p>
-              </div>
 
               {/* Divider */}
               <div className="divider my-6" />
@@ -186,7 +165,7 @@ export default function Profile() {
             </div>
 
             {/* Education timeline */}
-            <div className="rounded-[32px] border border-border-subtle bg-surface-card p-8">
+            <div className="rounded-[32px] border border-border-subtle bg-surface-card/80 backdrop-blur-md p-8">
               {education.map((edu, i) => (
                 <div key={edu.title}>
                   <div className="flex items-center justify-between gap-4">

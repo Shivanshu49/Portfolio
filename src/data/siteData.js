@@ -1,15 +1,15 @@
 export const personalInfo = {
   name: "Shivanshu Dixit",
-  role: "Full-Stack Developer & AI Explorer",
-  tagline: "Full-Stack MERN Developer | Backend Craftsman | AI/ML Explorer",
-  subtitle: "Building reliable systems, scalable APIs, and smooth user experiences.",
-  bio: "I'm a B.Tech Computer Science student with a passion for Web Development & Artificial Intelligence — always curious, always building, always learning. Currently diving deep into the MERN stack (MongoDB, Express.js, React, Node.js) while sharpening my skills in modern web technologies. I love the process of transforming ideas into clean, functional, and responsive web apps that solve real-world problems.",
+  role: "Backend Developer",
+  tagline: "Backend & AI developer building scalable web apps.",
+  subtitle: "Focused on MERN, performance, and real-world solutions.",
+  bio: "I'm a B.Tech Computer Science student passionate about backend development and artificial intelligence. I specialize in building scalable APIs, full-stack web applications, and AI-powered solutions using the MERN stack. I enjoy solving real-world problems through clean architecture, efficient systems, and continuous learning.",
   availableStatus: "Available to code",
   location: "Delhi, India",
   email: "shivanshudixit573@gmail.com",
   stats: [
-    { value: "9+", label: "Public Repos" },
-    { value: "11", label: "GitHub Followers" },
+    { value: "+100", label: "Satisfied Client" },
+    { value: "+95", label: "Good Reviews" },
   ],
   social: {
     twitter: "https://x.com/Shivanshu049",
@@ -21,29 +21,23 @@ export const personalInfo = {
 };
 
 export const skills = [
-  "MERN Stack",
   "Backend Development",
   "REST APIs",
-  "MongoDB",
-  "React.js",
-  "Node.js",
-  "Express.js",
-  "Tailwind CSS",
+  "MERN Stack",
+  "Database Design",
   "AI / Machine Learning",
-  "Python",
   "System Design",
-  "DevOps",
 ];
 
 export const education = [
   {
-    title: "B.Tech CSE",
-    type: "University",
+    title: "B.Tech CSE Student",
+    type: "Learning",
     period: "2022–Present",
   },
   {
     title: "MERN & AI Developer",
-    type: "Self-Taught",
+    type: "Personal",
     period: "2023–Present",
   },
 ];
@@ -53,25 +47,25 @@ export const services = [
     number: "01",
     title: "AI Integration",
     description:
-      "Creating intelligent features using machine learning and LLM-based applications for real-world solutions.",
+      "Creating intelligent features using machine learning and LLM-based applications.",
   },
   {
     number: "02",
     title: "Backend Development",
     description:
-      "Designing robust server-side applications with clean architecture, scalable systems, and optimal performance.",
+      "Designing robust server-side applications with clean architecture and efficient logic.",
   },
   {
     number: "03",
     title: "API Development",
     description:
-      "Building secure, scalable REST APIs for seamless communication between frontend and backend systems.",
+      "Building secure, scalable REST APIs for seamless communication between systems.",
   },
   {
     number: "04",
     title: "Database Management",
     description:
-      "Designing optimized databases with MongoDB & SQL for high performance and reliable data management.",
+      "Designing optimized databases with MongoDB & SQL for performance and reliability.",
   },
 ];
 
@@ -104,32 +98,32 @@ export const comparisons = [
     good: {
       title: "Secure & Reliable Systems",
       description:
-        "Built with authentication, validation, and error handling",
+        "Implementing best practices for security and data protection",
     },
     bad: {
       title: "Vulnerable Applications",
       description:
-        "Lacking security best practices and data protection",
+        "Ignoring security, leading to risks and failures",
     },
   },
   {
     good: {
       title: "Clear Communication & Delivery",
       description:
-        "Transparent process with regular updates and on-time delivery",
+        "Transparent updates and structured development process",
     },
     bad: {
       title: "Poor Communication",
       description:
-        "Unclear timelines and inconsistent project updates",
+        "Unclear progress and inconsistent delivery",
     },
   },
 ];
 
 export const projectStats = [
-  { value: "9+", label: "Projects built" },
-  { value: "6+", label: "Tech Mastered" },
-  { value: "100%", label: "Passion" },
+  { value: "25+", label: "Projects built" },
+  { value: "5+", label: "Tech Mastered" },
+  { value: "100%", label: "Learning" },
 ];
 
 export const projects = [

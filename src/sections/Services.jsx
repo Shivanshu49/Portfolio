@@ -21,7 +21,7 @@ export default function Services() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ type: "spring", stiffness: 100, damping: 20 }}
           className="text-center mb-14"
         >
           <Badge icon={<CircleDot size={14} />}>Professional Services</Badge>
@@ -47,9 +47,9 @@ export default function Services() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                transition={{ type: "spring", stiffness: 100, damping: 20, delay: i * 0.1 }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="group relative p-6 rounded-[24px] border border-border-subtle bg-surface-card card-glow hover:border-border-hover transition-all duration-300"
+                className="group relative p-6 rounded-[24px] border border-border-subtle bg-surface-card/80 backdrop-blur-md card-glow hover:border-border-hover transition-all duration-300"
               >
                 <div className="relative z-10">
                   {/* Number badge top-right */}
@@ -83,8 +83,8 @@ export default function Services() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-8 p-5 rounded-[24px] border border-border-subtle bg-surface-card"
+          transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.3 }}
+          className="mt-8 p-5 rounded-[24px] border border-border-subtle bg-surface-card/80 backdrop-blur-md"
         >
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
@@ -104,19 +104,9 @@ export default function Services() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.4 }}
           className="mt-8 flex flex-wrap gap-3 justify-center"
         >
-          <a
-            href="#projects"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="px-7 py-3.5 rounded-full bg-white/[0.07] border border-border-subtle text-white text-[14px] font-medium hover:bg-white/12 hover:border-border-hover transition-all hover:scale-[1.03]"
-          >
-            See All Projects
-          </a>
           <a
             href="#contact"
             onClick={(e) => {
@@ -126,6 +116,16 @@ export default function Services() {
             className="px-7 py-3.5 rounded-full bg-white text-black text-[14px] font-medium hover:bg-white/90 transition-all hover:scale-[1.03]"
           >
             Contact Now
+          </a>
+          <a
+            href="#projects"
+            onClick={(e) => {
+              e.preventDefault();
+              document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="px-7 py-3.5 rounded-full bg-white/[0.07] border border-border-subtle text-white text-[14px] font-medium hover:bg-white/12 hover:border-border-hover transition-all hover:scale-[1.03]"
+          >
+            View projects
           </a>
         </motion.div>
       </div>
