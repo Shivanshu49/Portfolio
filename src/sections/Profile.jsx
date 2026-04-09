@@ -20,12 +20,12 @@ export default function Profile() {
           className="text-center mb-16"
         >
           <Badge icon={<span className="w-2 h-2 rounded-full bg-accent-blue inline-block" />}>
-            Backend developer
+            Full Stack Developer
           </Badge>
           <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
             <span className="text-white">Shivanshu,</span>{" "}
             <span className="font-serif italic text-text-secondary font-normal">
-              Backend Developer
+              Full Stack Developer
             </span>
           </h2>
           <p className="mt-4 text-text-muted max-w-2xl mx-auto">
@@ -68,29 +68,19 @@ export default function Profile() {
               <span className="font-bold">{personalInfo.name}</span>
             </h3>
             <p className="text-sm text-text-muted mt-1">
-              Backend Developer & AI Enthusiast
+              Full Stack Developer & AI Builder
             </p>
 
             {/* Social icons */}
             <div className="flex items-center gap-3 mt-5 pt-5 border-t border-border-subtle">
               <a
-                href={personalInfo.social.twitter}
+                href={personalInfo.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2.5 rounded-xl border border-border-subtle hover:border-border-hover hover:bg-surface-hover text-text-muted hover:text-white transition-all"
-                aria-label="Twitter / X"
+                aria-label="GitHub"
               >
-                <XIcon size={18} />
-              </a>
-              <span className="w-px h-5 bg-border-subtle" />
-              <a
-                href={personalInfo.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-xl border border-border-subtle hover:border-border-hover hover:bg-surface-hover text-text-muted hover:text-white transition-all"
-                aria-label="Instagram"
-              >
-                <InstagramIcon size={18} />
+                <GithubIcon size={18} />
               </a>
               <span className="w-px h-5 bg-border-subtle" />
               <a
@@ -101,16 +91,6 @@ export default function Profile() {
                 aria-label="LinkedIn"
               >
                 <LinkedinIcon size={18} />
-              </a>
-              <span className="w-px h-5 bg-border-subtle" />
-              <a
-                href={personalInfo.social.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-xl border border-border-subtle hover:border-border-hover hover:bg-surface-hover text-text-muted hover:text-white transition-all"
-                aria-label="GitHub"
-              >
-                <GithubIcon size={18} />
               </a>
               <span className="w-px h-5 bg-border-subtle" />
               <a
@@ -149,7 +129,7 @@ export default function Profile() {
           >
             {/* Bio */}
             <div className="rounded-[32px] border border-border-subtle bg-surface-card/80 backdrop-blur-md p-8">
-              <p className="text-text-secondary leading-relaxed text-[15px]">
+              <p className="text-text-secondary leading-relaxed text-[15px] whitespace-pre-line">
                 {personalInfo.bio}
               </p>
 

@@ -37,4 +37,14 @@ export const techStackData = [
       { name: "Linux", icon: "linux" },
     ],
   },
+  {
+    category: "AI / TOOLS",
+    items: [
+      { name: "Gemini API", icon: "google" },
+      { name: "OpenAI API", icon: "openai" },
+      { name: "Groq API", icon: "groq" },
+      { name: "FAISS", icon: "python" },
+      { name: "Pinecone", icon: "python" },
+    ],
+  },
 ];

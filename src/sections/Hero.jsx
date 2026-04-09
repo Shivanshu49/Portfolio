@@ -29,32 +29,36 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
-              className="mt-6"
+              className="mt-6 flex flex-col gap-2"
             >
+              <span className="text-xl md:text-2xl font-medium text-text-muted">
+                Hi, I’m
+              </span>
               <span className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold text-white leading-[1] tracking-[-0.03em]">
                 {personalInfo.name}
+                <motion.span
+                  whileHover={{ rotate: 45 }}
+                  transition={{ duration: 0.2 }}
+                  className="inline-flex align-middle ml-3"
+                >
+                  <ArrowUpRight
+                    size={36}
+                    className="text-text-muted"
+                    strokeWidth={1.5}
+                  />
+                </motion.span>
               </span>
-              <motion.span
-                whileHover={{ rotate: 45 }}
-                transition={{ duration: 0.2 }}
-                className="inline-flex align-middle ml-3"
-              >
-                <ArrowUpRight
-                  size={36}
-                  className="text-text-muted"
-                  strokeWidth={1.5}
-                />
-              </motion.span>
+              <span className="text-2xl md:text-3xl font-semibold text-text-secondary mt-2">
+                {personalInfo.tagline}
+              </span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
-              className="mt-6 text-[15px] md:text-base text-text-muted max-w-md leading-relaxed"
+              className="mt-6 text-[15px] md:text-base text-text-muted max-w-xl leading-relaxed whitespace-pre-line"
             >
-              {personalInfo.tagline}
-              <br />
               {personalInfo.subtitle}
             </motion.p>
 

@@ -72,6 +72,11 @@ export default function TechStack() {
                           <div className="w-10 h-10 transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_0_15px_rgba(255,255,255,0.7)] flex items-center justify-center">
                              <img src="/next.svg" alt="Next.js" className="w-full h-full object-contain brightness-0 invert" />
                           </div>
+                        ) : item.icon === "groq" ? (
+                          <svg viewBox="0 0 100 100" className="w-10 h-10 transition-transform duration-300 group-hover:scale-110">
+                            <circle cx="50" cy="50" r="50" fill="#F55036" />
+                            <path fill="white" transform="translate(18, 16) scale(0.65)" d="M63 3.6V20.2C59 16.5 52.8 14 45.4 14C23.6 14 9.1 27.6 9.1 44.8C9.1 61.6 24 75 45.2 75C53.7 75 60.1 72.1 63.8 67.9V74.8C63.8 85.3 54.8 91.2 46.5 91.2C38.9 91.2 31.9 86.8 30.5 78.4H15.1C16.8 96 30 105 46.5 105C64.6 105 79.1 94.6 79.1 73.1V3.6H63ZM44.7 61.5C33 61.5 24.8 54 24.8 44.8C24.8 35.6 33.3 27.7 44.7 27.7C56.2 27.7 64 35.8 64 45.1C64 54 56.4 61.5 44.7 61.5Z"/>
+                          </svg>
                         ) : (
                           <StackIcon 
                             name={item.icon} 

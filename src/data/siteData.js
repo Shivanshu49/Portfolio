@@ -1,9 +1,9 @@
 export const personalInfo = {
   name: "Shivanshu Dixit",
-  role: "Backend Developer",
-  tagline: "Backend & AI developer building scalable web apps.",
-  subtitle: "Focused on MERN, performance, and real-world solutions.",
-  bio: "I'm a B.Tech Computer Science student passionate about backend development and artificial intelligence. I specialize in building scalable APIs, full-stack web applications, and AI-powered solutions using the MERN stack. I enjoy solving real-world problems through clean architecture, efficient systems, and continuous learning.",
+  role: "Full Stack Developer",
+  tagline: "Full Stack Developer | AI Builder",
+  subtitle: "I build scalable web applications, backend systems, and AI-powered tools that solve real-world problems. \nFocused on creating impactful products using React, FastAPI, and modern AI technologies.",
+  bio: "I am a Full Stack Developer passionate about building scalable web applications and AI-powered systems.\n\nI specialize in modern technologies like React, Next.js, FastAPI, and MongoDB, and I enjoy solving real-world problems through clean and efficient code.\n\nCurrently, I am focused on developing AI-driven applications and backend systems that are fast, reliable, and user-centric.",
   availableStatus: "Available to code",
   location: "Delhi, India",
   email: "shivanshudixit573@gmail.com",
@@ -128,52 +128,43 @@ export const projectStats = [
 
 export const projects = [
   {
-    title: "TruthLens",
+    title: "Second Brain AI",
     description:
-      "AI-powered misinformation detection tool that analyzes screenshots and text to identify potentially false or misleading information using OCR and Generative AI.",
-    tech: ["TypeScript", "React", "Python", "AI/ML"],
+      "An AI-powered knowledge management system that helps users store, search, and retrieve information efficiently using vector databases and intelligent search.",
+    tech: ["React", "FastAPI", "MongoDB", "FAISS"],
+    features: [
+      "Semantic search using embeddings",
+      "Fast retrieval of stored data",
+      "Clean and responsive UI",
+    ],
+    github: "https://github.com/Shivanshu49/SecondBrain-AI",
+    live: "https://second-brain-ai-five.vercel.app",
+  },
+  {
+    title: "Truth Lens",
+    description:
+      "An AI-based tool designed to detect misinformation by analyzing content and providing credibility insights.",
+    tech: ["React", "Python", "APIs"],
+    features: [
+      "Content analysis using AI",
+      "Real-time response",
+      "Simple and intuitive interface",
+    ],
     github: "https://github.com/Shivanshu49/TruthLens",
     live: "https://truth-lens-nine-sand.vercel.app",
   },
   {
-    title: "ClipForge",
+    title: "Portfolio Website",
     description:
-      "AI-driven platform that transforms ideas into engaging, short-form videos optimized for social media. Automates the entire content creation pipeline from script generation to final rendering.",
-    tech: ["Python", "FastAPI", "AI", "Video Processing"],
-    github: "https://github.com/Shivanshu49/ClipForge",
-    live: null,
-  },
-  {
-    title: "RentWise AI",
-    description:
-      "Smart rental property platform that uses AI to estimate fair property prices and help users easily find, list, and manage rental properties with advanced search and secure authentication.",
-    tech: ["JavaScript", "MERN Stack", "AI", "MongoDB"],
-    github: "https://github.com/Shivanshu49/RentWise-AI",
-    live: null,
-  },
-  {
-    title: "Sadak Suraksha",
-    description:
-      "AI-powered WhatsApp-based accident reporting & emergency response network for faster life-saving alerts.",
-    tech: ["JavaScript", "Node.js", "WhatsApp API", "AI"],
-    github: "https://github.com/Shivanshu49/Sadak-Suraksha",
-    live: null,
-  },
-  {
-    title: "IssueLens",
-    description:
-      "Real-time GitHub monitoring tool that transforms issues and pull requests into clear bug and fix insights using streaming data. Built with Pathway for instant developer insights.",
-    tech: ["JavaScript", "Pathway", "Streaming", "GitHub API"],
-    github: "https://github.com/Shivanshu49/IssueLens",
-    live: null,
-  },
-  {
-    title: "PersistFace",
-    description:
-      "A practical pipeline to capture faces, train a simple recognizer, and run a real-time tracker/recognizer using OpenCV for face recognition.",
-    tech: ["Python", "OpenCV", "ML", "Computer Vision"],
-    github: "https://github.com/Shivanshu49/PersistFace",
-    live: null,
+      "A personal portfolio website showcasing projects, skills, and experience with a custom domain and modern UI.",
+    tech: ["Next.js", "Vercel"],
+    features: [
+      "Fast and responsive design",
+      "Custom domain integration",
+      "SEO optimized",
+    ],
+    github: "https://github.com/Shivanshu49/Portfolio",
+    live: "https://shivanshu-dixit.vercel.app",
   },
 ];
 

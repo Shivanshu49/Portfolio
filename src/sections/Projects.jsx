@@ -120,34 +120,45 @@ export default function Projects() {
           className="mt-10"
         >
           <h3 className="text-2xl font-bold text-white mb-6 tracking-tight">Featured Projects</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, i) => (
               <motion.div
                 key={project.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 100, damping: 20, delay: i * 0.08 }}
-                whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="group relative p-6 rounded-[24px] border border-border-subtle bg-surface-card/80 backdrop-blur-md card-glow hover:border-border-hover transition-all duration-300"
+                transition={{ type: "spring", stiffness: 100, damping: 20, delay: i * 0.1 }}
+                className="group relative p-6 rounded-2xl border border-border-subtle bg-surface-card/80 backdrop-blur-md shadow-lg hover:shadow-xl hover:scale-[1.03] transition-all duration-300 flex flex-col h-full"
               >
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col flex-grow">
                   {/* Title */}
-                  <h4 className="text-lg font-bold text-white tracking-tight mb-2">
+                  <h4 className="text-xl font-bold text-white tracking-tight mb-3">
                     {project.title}
                   </h4>
 
                   {/* Description */}
-                  <p className="text-[13px] text-text-muted leading-relaxed mb-4 line-clamp-3">
+                  <p className="text-sm text-text-muted leading-relaxed mb-4">
                     {project.description}
                   </p>
 
+                  {/* Features */}
+                  {project.features && (
+                    <ul className="mb-6 space-y-1.5 flex-grow">
+                      {project.features.map((feature, idx) => (
+                        <li key={idx} className="text-xs text-text-secondary flex items-start gap-2">
+                          <span className="mt-1 w-1.5 h-1.5 rounded-full bg-accent-blue/80 shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
                   {/* Tech tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2 mb-6 mt-auto">
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2.5 py-1 text-[11px] font-medium text-text-secondary bg-white/[0.04] border border-border-subtle rounded-full"
+                        className="px-3 py-1.5 text-xs font-semibold text-text-secondary bg-white/[0.04] border border-border-subtle rounded-md"
                       >
                         {tech}
                       </span>
@@ -158,29 +169,26 @@ export default function Projects() {
 
                   {/* Links */}
                   <div className="flex flex-wrap items-center gap-3">
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 inline-flex justify-center items-center gap-2 px-4 py-2.5 bg-accent-blue text-white rounded-lg text-sm font-medium hover:bg-accent-blue/90 shadow-md transition-colors"
+                      >
+                        <ExternalLink size={16} />
+                        Live Demo
+                      </a>
+                    )}
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs text-text-muted hover:text-white transition-colors"
+                      className="flex-1 inline-flex justify-center items-center gap-2 px-4 py-2.5 bg-white/10 text-white rounded-lg text-sm font-medium hover:bg-white/15 border border-border-subtle shadow-md transition-colors"
                     >
-                      <GithubIcon size={14} />
+                      <GithubIcon size={16} />
                       Source Code
                     </a>
-                    {project.live && (
-                      <>
-                        <span className="w-px h-3.5 bg-border-subtle" />
-                        <a
-                          href={project.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs text-accent-blue hover:text-white transition-colors"
-                        >
-                          <ExternalLink size={12} />
-                          Live Demo
-                        </a>
-                      </>
-                    )}
                   </div>
                 </div>
               </motion.div>

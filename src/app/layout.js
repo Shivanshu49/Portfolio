@@ -16,21 +16,21 @@ const instrument = Instrument_Serif({
 });
 
 export const metadata = {
-  title: "Shivanshu Dixit — Backend & AI Developer",
+  title: "Shivanshu Dixit | Full Stack Developer",
   description:
-    "Backend & AI developer building scalable web apps. Focused on MERN, performance, and real-world solutions. Explore projects, services, and get in touch.",
+    "Full Stack Developer specializing in React, FastAPI, and AI-powered applications. Building scalable and modern web solutions.",
   keywords: [
     "Shivanshu Dixit",
-    "backend developer",
-    "MERN stack",
+    "full stack developer",
+    "React",
+    "FastAPI",
     "AI developer",
-    "full stack",
     "portfolio",
   ],
   openGraph: {
-    title: "Shivanshu Dixit — Backend & AI Developer",
+    title: "Shivanshu Dixit | Full Stack Developer",
     description:
-      "Backend & AI developer building scalable web apps. Focused on MERN, performance, and real-world solutions.",
+      "Full Stack Developer specializing in React, FastAPI, and AI-powered applications. Building scalable and modern web solutions.",
     type: "website",
   },
 };

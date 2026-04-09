@@ -130,24 +130,6 @@ export default function Contact() {
                 <LinkedinIcon size={20} />
               </a>
               <a
-                href={personalInfo.social.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 text-text-muted hover:text-white transition-colors"
-                aria-label="Twitter / X"
-              >
-                <XIcon size={20} />
-              </a>
-              <a
-                href={personalInfo.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 text-text-muted hover:text-white transition-colors"
-                aria-label="Instagram"
-              >
-                <InstagramIcon size={20} />
-              </a>
-              <a
                 href={`mailto:${personalInfo.email}`}
                 className="p-2 text-text-muted hover:text-white transition-colors"
                 aria-label="Email"
@@ -178,9 +160,10 @@ export default function Contact() {
             ))}
           </div>
 
-          <p className="mt-8 text-xs text-text-muted">
-            © {new Date().getFullYear()} {personalInfo.name}. All rights
-            reserved.
+          <p className="mt-8 text-sm text-text-muted leading-relaxed">
+            © 2026 Shivanshu Dixit
+            <br />
+            Built with Next.js and deployed on Vercel
           </p>
         </div>
       </footer>
