@@ -10,7 +10,7 @@ import Contact from "@/sections/Contact";
 
 export default function Home() {
   return (
-    <main className="relative">
+    <main className="relative overflow-x-hidden">
       {/* Full-page video background */}
       <VideoBackground />
 

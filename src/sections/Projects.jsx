@@ -40,7 +40,7 @@ export default function Projects() {
               </motion.p>
 
               {/* Stats grid */}
-              <div className="grid grid-cols-3 gap-3 mt-8">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mt-8">
                 {projectStats.map((stat) => (
                   <StatCard
                     key={stat.label}
@@ -157,7 +157,7 @@ export default function Projects() {
                   <div className="divider mb-4" />
 
                   {/* Links */}
-                  <div className="flex items-center gap-3">
+                  <div className="flex flex-wrap items-center gap-3">
                     <a
                       href={project.github}
                       target="_blank"

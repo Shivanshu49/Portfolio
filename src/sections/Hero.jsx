@@ -92,7 +92,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.4 }}
-              className="mt-10 flex gap-10"
+              className="mt-10 flex flex-wrap gap-6 sm:gap-10"
             >
               {personalInfo.stats.map((stat) => (
                 <div key={stat.label}>
