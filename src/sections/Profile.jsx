@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { XIcon, InstagramIcon, LinkedinIcon, GithubIcon, EmailIcon } from "@/components/SocialIcons";
+import { XIcon, InstagramIcon, LinkedinIcon, GithubIcon, EmailIcon, MediumIcon } from "@/components/SocialIcons";
 import Badge from "@/components/Badge";
 import SkillTag from "@/components/SkillTag";
 import { personalInfo, skills, education } from "@/data/siteData";
@@ -72,7 +72,7 @@ export default function Profile() {
             </p>
 
             {/* Social icons */}
-            <div className="flex items-center gap-3 mt-5 pt-5 border-t border-border-subtle">
+            <div className="flex flex-wrap items-center gap-3 mt-5 pt-5 border-t border-border-subtle">
               <a
                 href={personalInfo.social.github}
                 target="_blank"
@@ -91,6 +91,26 @@ export default function Profile() {
                 aria-label="LinkedIn"
               >
                 <LinkedinIcon size={18} />
+              </a>
+              <span className="w-px h-5 bg-border-subtle" />
+              <a
+                href={personalInfo.social.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-xl border border-border-subtle hover:border-border-hover hover:bg-surface-hover text-text-muted hover:text-white transition-all"
+                aria-label="X (Twitter)"
+              >
+                <XIcon size={18} />
+              </a>
+              <span className="w-px h-5 bg-border-subtle" />
+              <a
+                href={personalInfo.social.medium}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-xl border border-border-subtle hover:border-border-hover hover:bg-surface-hover text-text-muted hover:text-white transition-all"
+                aria-label="Medium"
+              >
+                <MediumIcon size={18} />
               </a>
               <span className="w-px h-5 bg-border-subtle" />
               <a

@@ -16,6 +16,7 @@ export const personalInfo = {
     instagram: "https://www.instagram.com/shivanshu.dixit18/",
     linkedin: "https://www.linkedin.com/in/shivanshu049",
     github: "https://github.com/Shivanshu49",
+    medium: "https://shivanshu49.medium.com",
   },
   bookCallLink: "https://cal.com/shivanshu49/15min",
 };

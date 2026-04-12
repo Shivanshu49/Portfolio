@@ -5,7 +5,7 @@ import Image from "next/image";
 import {
   CircleDot,
 } from "lucide-react";
-import { XIcon, InstagramIcon, LinkedinIcon, GithubIcon, EmailIcon } from "@/components/SocialIcons";
+import { XIcon, InstagramIcon, LinkedinIcon, GithubIcon, EmailIcon, MediumIcon } from "@/components/SocialIcons";
 import Badge from "@/components/Badge";
 import { personalInfo, contactServices, footerLinks } from "@/data/siteData";
 
@@ -128,6 +128,24 @@ export default function Contact() {
                 aria-label="LinkedIn"
               >
                 <LinkedinIcon size={20} />
+              </a>
+              <a
+                href={personalInfo.social.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-text-muted hover:text-white transition-colors"
+                aria-label="X (Twitter)"
+              >
+                <XIcon size={20} />
+              </a>
+              <a
+                href={personalInfo.social.medium}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-text-muted hover:text-white transition-colors"
+                aria-label="Medium"
+              >
+                <MediumIcon size={20} />
               </a>
               <a
                 href={`mailto:${personalInfo.email}`}
