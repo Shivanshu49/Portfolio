@@ -6,6 +6,7 @@ import { XIcon, InstagramIcon, LinkedinIcon, GithubIcon, EmailIcon, MediumIcon }
 import Badge from "@/components/Badge";
 import SkillTag from "@/components/SkillTag";
 import { personalInfo, skills, education } from "@/data/siteData";
+import { scrollToSection } from "@/lib/scroll";
 
 export default function Profile() {
   return (
@@ -127,9 +128,7 @@ export default function Profile() {
               href="#contact"
               onClick={(e) => {
                 e.preventDefault();
-                document
-                  .querySelector("#contact")
-                  ?.scrollIntoView({ behavior: "smooth" });
+                scrollToSection("#contact");
               }}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}

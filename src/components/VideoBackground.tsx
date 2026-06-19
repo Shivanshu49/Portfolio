@@ -2,7 +2,10 @@
 
 export default function VideoBackground() {
   return (
-    <div className="fixed inset-0 w-full h-full z-0 pointer-events-none" aria-hidden="true">
+    <div
+      className="fixed inset-0 w-full h-full z-0 pointer-events-none"
+      aria-hidden="true"
+    >
       <video
         autoPlay
         loop
@@ -10,6 +13,7 @@ export default function VideoBackground() {
         playsInline
         className="w-full h-full object-cover"
         style={{ opacity: 0.35 }}
+        suppressHydrationWarning
       >
         <source src="/tech-bg.mp4" type="video/mp4" />
       </video>
@@ -17,7 +21,7 @@ export default function VideoBackground() {
       <div className="absolute inset-0 bg-black/65" />
       {/* Top and bottom gradient fade to pure black for seamless blending */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
-      {/* Subtle blue radial glow matching Framer design */}
+      {/* Subtle blue radial glow matching the design */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center_top,_rgba(30,100,180,0.08)_0%,_transparent_60%)]" />
     </div>
   );

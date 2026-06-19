@@ -8,6 +8,7 @@ import {
 import { XIcon, InstagramIcon, LinkedinIcon, GithubIcon, EmailIcon, MediumIcon } from "@/components/SocialIcons";
 import Badge from "@/components/Badge";
 import { personalInfo, contactServices, footerLinks } from "@/data/siteData";
+import { scrollToSection } from "@/lib/scroll";
 
 export default function Contact() {
   return (
@@ -167,9 +168,7 @@ export default function Contact() {
                 href={link.href}
                 onClick={(e) => {
                   e.preventDefault();
-                  document
-                    .querySelector(link.href)
-                    ?.scrollIntoView({ behavior: "smooth" });
+                  scrollToSection(link.href);
                 }}
                 className="text-sm text-accent-blue hover:text-white transition-colors"
               >

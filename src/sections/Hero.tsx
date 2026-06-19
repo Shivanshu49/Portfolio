@@ -5,6 +5,7 @@ import { ArrowUpRight, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Badge from "@/components/Badge";
 import { personalInfo } from "@/data/siteData";
+import { scrollToSection } from "@/lib/scroll";
 
 export default function Hero() {
   return (
@@ -73,7 +74,7 @@ export default function Hero() {
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+                  scrollToSection("#contact");
                 }}
                 className="px-7 py-3.5 rounded-full bg-white text-black text-[14px] font-medium hover:bg-white/90 transition-all hover:scale-[1.03]"
               >
@@ -83,7 +84,7 @@ export default function Hero() {
                 href="#projects"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
+                  scrollToSection("#projects");
                 }}
                 className="px-7 py-3.5 rounded-full bg-white/[0.07] border border-border-subtle text-white text-[14px] font-medium hover:bg-white/12 transition-all hover:scale-[1.03]"
               >

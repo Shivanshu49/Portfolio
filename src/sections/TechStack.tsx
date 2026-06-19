@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { techStackData } from "@/data/techStack";
+import { INVERT_ICONS } from "@/data/icons";
 import StackIcon from "tech-stack-icons";
 import Badge from "@/components/Badge";
 import { CircleDot } from "lucide-react";
@@ -68,10 +69,6 @@ export default function TechStack() {
                             <path fill="#059669" d="M64 12A52 52 0 1 0 116 64 52.059 52.059 0 0 0 64 12zm0 100a48 48 0 1 1 48-48 48.054 48.054 0 0 1-48 48z" />
                             <path fill="#059669" d="M57.48 93.38a2 2 0 0 0 3.12 1.54l36.56-25.68A2 2 0 0 0 96 66.02H76.7V34.62a2 2 0 0 0-3.12-1.54L37.02 58.76a2 2 0 0 0 1.15 3.22h19.3v31.4z" />
                           </svg>
-                        ) : item.icon === "nextjs" ? (
-                          <div className="w-10 h-10 transition-transform duration-300 group-hover:scale-110 drop-shadow-[0_0_15px_rgba(255,255,255,0.7)] flex items-center justify-center">
-                             <img src="/next.svg" alt="Next.js" className="w-full h-full object-contain brightness-0 invert" />
-                          </div>
                         ) : item.icon === "groq" ? (
                           <svg viewBox="0 0 100 100" className="w-10 h-10 transition-transform duration-300 group-hover:scale-110">
                             <circle cx="50" cy="50" r="50" fill="#F55036" />
@@ -81,7 +78,7 @@ export default function TechStack() {
                           <StackIcon 
                             name={item.icon} 
                             className={`w-10 h-10 transition-transform duration-300 group-hover:scale-110 ${
-                              ['github', 'expressjs', 'nextjs', 'nextjs2'].includes(item.icon) ? 'drop-shadow-[0_0_15px_rgba(255,255,255,0.7)] brightness-0 invert opacity-90' : ''
+                              INVERT_ICONS.has(item.icon) ? 'drop-shadow-[0_0_15px_rgba(255,255,255,0.7)] brightness-0 invert opacity-90' : ''
                             }`} 
                           />
                         )}

@@ -13,9 +13,12 @@
 
   --color-text-primary: #ffffff;
   --color-text-secondary: #a1a1aa;
-  --color-text-muted: #71717a;
+  /* Lightened from #71717a to clear WCAG AA (4.5:1) for body copy on the dark cards */
+  --color-text-muted: #8b8b94;
 
   --color-accent-blue: #3b82f6;
+  --color-accent-cyan: #06b6d4;
+  --color-accent-violet: #8b5cf6;
   --color-accent-glow: #1e293b;
   --color-accent-green: #22c55e;
 
@@ -30,6 +33,18 @@
 /* ── Base ── */
 html {
   scroll-behavior: smooth;
+}
+
+/* Keep section tops clear of the fixed navbar when scrolled/focused into view */
+section[id],
+main[id] {
+  scroll-margin-top: 6rem;
+}
+
+/* Programmatic focus on a section (for skip-link / in-page nav) shouldn't draw a
+   ring around the whole block — interactive controls still get :focus-visible. */
+[tabindex="-1"]:focus {
+  outline: none;
 }
 
 body {
@@ -131,4 +146,39 @@ body {
     rgba(255, 255, 255, 0.1),
     transparent
   );
+}
+
+/* ── Brand gradient text (used sparingly on accent words) ── */
+.text-gradient {
+  background: linear-gradient(
+    100deg,
+    var(--color-accent-blue) 0%,
+    var(--color-accent-cyan) 50%,
+    var(--color-accent-violet) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Accessible focus ring ── */
+:focus-visible {
+  outline: 2px solid var(--color-accent-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Respect reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

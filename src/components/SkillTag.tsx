@@ -2,7 +2,12 @@
 
 import { motion } from "framer-motion";
 
-export default function SkillTag({ label, index }) {
+interface SkillTagProps {
+  label: string;
+  index: number;
+}
+
+export default function SkillTag({ label, index }: SkillTagProps) {
   return (
     <motion.span
       initial={{ opacity: 0, scale: 0.9 }}

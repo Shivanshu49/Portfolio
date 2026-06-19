@@ -1,11 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cpu, SlidersHorizontal, Waypoints, PenLine, CircleDot, SmilePlus } from "lucide-react";
+import {
+  Cpu,
+  SlidersHorizontal,
+  Waypoints,
+  PenLine,
+  CircleDot,
+  SmilePlus,
+  type LucideIcon,
+} from "lucide-react";
 import Badge from "@/components/Badge";
 import { services } from "@/data/siteData";
+import { scrollToSection } from "@/lib/scroll";
 
-const iconMap = {
+const iconMap: Record<string, LucideIcon> = {
   "01": Cpu,
   "02": SlidersHorizontal,
   "03": Waypoints,
@@ -111,7 +120,7 @@ export default function Services() {
             href="#contact"
             onClick={(e) => {
               e.preventDefault();
-              document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+              scrollToSection("#contact");
             }}
             className="px-7 py-3.5 rounded-full bg-white text-black text-[14px] font-medium hover:bg-white/90 transition-all hover:scale-[1.03]"
           >
@@ -121,7 +130,7 @@ export default function Services() {
             href="#projects"
             onClick={(e) => {
               e.preventDefault();
-              document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
+              scrollToSection("#projects");
             }}
             className="px-7 py-3.5 rounded-full bg-white/[0.07] border border-border-subtle text-white text-[14px] font-medium hover:bg-white/12 hover:border-border-hover transition-all hover:scale-[1.03]"
           >

@@ -1,4 +1,20 @@
-export const techStackData = [
+import type { StackIconName } from "./icons";
+
+export interface TechItem {
+  name: string;
+  /**
+   * tech-stack-icons name, or a key special-cased in the TechStack section
+   * ("fastapi" and "groq" render custom SVGs).
+   */
+  icon: StackIconName;
+}
+
+export interface TechCategory {
+  category: string;
+  items: TechItem[];
+}
+
+export const techStackData: TechCategory[] = [
   {
     category: "LANGUAGES",
     items: [

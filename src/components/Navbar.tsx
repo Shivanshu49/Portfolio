@@ -1,12 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, type MouseEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, Menu, X } from "lucide-react";
-import { GithubIcon } from "@/components/SocialIcons";
 import { personalInfo } from "@/data/siteData";
+import { scrollToSection } from "@/lib/scroll";
 
-const navLinks = [
+interface NavLink {
+  label: string;
+  href: string;
+}
+
+const navLinks: NavLink[] = [
   { label: "TechStack", href: "#tech-stack" },
   { label: "Services", href: "#services" },
   { label: "Projects", href: "#projects" },
@@ -24,11 +29,10 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (e, href) => {
+  const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setMobileOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    scrollToSection(href);
   };
 
   return (
@@ -49,6 +53,7 @@ export default function Navbar() {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
+          aria-label="Back to top"
           className="px-4 py-1.5 text-[15px] font-bold text-white hover:text-white/80 transition-colors tracking-tight"
         >
           {personalInfo.name}
@@ -90,6 +95,7 @@ export default function Navbar() {
             onClick={() => setMobileOpen(!mobileOpen)}
             className="p-1.5 text-white/70 hover:text-white transition-colors"
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
           >
             {mobileOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
