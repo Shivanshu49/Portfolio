@@ -29,6 +29,8 @@ export interface PersonalInfo {
   stats: Stat[];
   social: SocialLinks;
   bookCallLink: string;
+  /** Path to the résumé PDF in /public (served at the site root). */
+  resume: string;
 }
 
 export interface Education {
@@ -113,6 +115,7 @@ export const personalInfo: PersonalInfo = {
     medium: "https://shivanshu49.medium.com",
   },
   bookCallLink: "https://cal.com/shivanshu49/15min",
+  resume: "/Shivanshu_Dixit_Resume.pdf",
 };
 
 export const skills: string[] = [

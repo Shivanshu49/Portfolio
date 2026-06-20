@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, type MouseEvent } from "react";
+import { useState, useEffect, useRef, type MouseEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, Menu, X } from "lucide-react";
+import { Sparkles, Menu, X, FileText, Download, ChevronDown } from "lucide-react";
 import { personalInfo } from "@/data/siteData";
 import { scrollToSection } from "@/lib/scroll";
 
@@ -16,18 +16,38 @@ const navLinks: NavLink[] = [
   { label: "Services", href: "#services" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
-  { label: "Resume", href: "#profile" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [resumeOpen, setResumeOpen] = useState(false);
+  const resumeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Close the resume dropdown on outside click or Escape.
+  useEffect(() => {
+    if (!resumeOpen) return;
+    const handlePointer = (e: globalThis.MouseEvent) => {
+      if (resumeRef.current && !resumeRef.current.contains(e.target as Node)) {
+        setResumeOpen(false);
+      }
+    };
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setResumeOpen(false);
+    };
+    document.addEventListener("mousedown", handlePointer);
+    document.addEventListener("keydown", handleKey);
+    return () => {
+      document.removeEventListener("mousedown", handlePointer);
+      document.removeEventListener("keydown", handleKey);
+    };
+  }, [resumeOpen]);
 
   const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -71,6 +91,60 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+
+          {/* Resume — view or download */}
+          <div ref={resumeRef} className="relative">
+            <button
+              type="button"
+              onClick={() => setResumeOpen((open) => !open)}
+              aria-haspopup="menu"
+              aria-expanded={resumeOpen}
+              className="flex items-center gap-1 px-3.5 py-1.5 text-[13px] text-text-muted hover:text-white transition-colors rounded-full hover:bg-white/5"
+            >
+              Resume
+              <ChevronDown
+                size={13}
+                className={`transition-transform duration-200 ${
+                  resumeOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            <AnimatePresence>
+              {resumeOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8, scale: 0.96 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -8, scale: 0.96 }}
+                  transition={{ duration: 0.18 }}
+                  role="menu"
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-48 rounded-2xl glass-strong p-1.5 flex flex-col gap-0.5"
+                >
+                  <a
+                    href={personalInfo.resume}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setResumeOpen(false)}
+                    role="menuitem"
+                    className="flex items-center gap-2.5 px-3 py-2 text-[13px] text-text-secondary hover:text-white hover:bg-white/5 rounded-xl transition-colors"
+                  >
+                    <FileText size={15} />
+                    View Resume
+                  </a>
+                  <a
+                    href={personalInfo.resume}
+                    download
+                    onClick={() => setResumeOpen(false)}
+                    role="menuitem"
+                    className="flex items-center gap-2.5 px-3 py-2 text-[13px] text-text-secondary hover:text-white hover:bg-white/5 rounded-xl transition-colors"
+                  >
+                    <Download size={15} />
+                    Download
+                  </a>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
 
         {/* Right — Book a Call */}
@@ -120,6 +194,26 @@ export default function Navbar() {
                   {link.label}
                 </a>
               ))}
+              <div className="divider my-1" />
+              <a
+                href={personalInfo.resume}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-text-secondary hover:text-white hover:bg-white/5 rounded-xl transition-colors"
+              >
+                <FileText size={16} />
+                View Resume
+              </a>
+              <a
+                href={personalInfo.resume}
+                download
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-text-secondary hover:text-white hover:bg-white/5 rounded-xl transition-colors"
+              >
+                <Download size={16} />
+                Download Resume
+              </a>
               <div className="divider my-1" />
               <a
                 href={personalInfo.bookCallLink}
